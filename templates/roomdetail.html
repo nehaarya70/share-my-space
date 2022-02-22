@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Room Details</title>
+    {% include 'headerfiles.html' %}
+    <script>
+        function viewroomphotos(roomid) {
+            var xml = new XMLHttpRequest();
+            xml.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    {#alert();#}
+                    var output = JSON.parse(this.response);
+                    var s = "";
+                    s += "<div class='row'>";
+                    s += "<div class='col-3'>";
+                    s += "<div class='col-12'>";
+                    s += "<img onclick='showbigimg(this)' src='{{ photo }}' style='width:100%;height:100px;margin:10px 0px;cursor:pointer;'>";
+                    s += "<p><h6 class='text-center text-capitalize'>Cover Photo</h6></p>";
+                    s += "</div>";
+                    s += "</div>";
+                    for (var i = 0; i < output.length; i++) {
+                        s += "<div class='col-3'>";
+                        s += "<div class='col-12'>";
+                        s += "<img onclick='showbigimg(this)' src='" + output[i]['photo'] + "' style='width:100%;height:100px;margin:10px 0px;cursor:pointer;'>";
+                        s += "<p><h6 class='text-center text-capitalize'>" + output[i]['title'] + "</h6></p>";
+                        s += "</div>";
+                        s += "</div>";
+                    }
+                    s += "</div>";
+                    document.getElementById('roomphotos').innerHTML = s;
+                }
+            };
+            xml.open('GET', '/roomphotos?roomid=' + roomid, true);
+            xml.send();
+        }
+
+        function showbigimg(obj) {
+            document.getElementById('bigimg').src = obj.src;
+        }
+
+
+    </script>
+</head>
+<body onload="viewroomphotos({{ roomid }})">
+{% include 'userheader.html' %}
+<div class="container">
+    <div class="col-12">
+        <h1 class="text-center headings mb-4">ROOM DETAILS</h1>
+        <div class="row">
+            <div class="form-group col-5">
+                <img class="mt-2" style="width:100%;height:300px;" src="{{ photo }}" alt="Something went wrong"
+                     name="bigimg" id="bigimg">
+            </div>
+
+            <div class="form-group col-7">
+                <table class="table">
+                    <tr>
+                        <th><h1 class="text-left text-uppercase text-primary">{{ title }}</h1></th>
+                        <th style="text-align: right;text-decoration-color: crimson;"><a
+                                href="bookingpage?roomid={{ roomid }}&priceperday={{ priceperday }}">Book Now</a></th>
+
+                    </tr>
+                    <tr>
+                        <th>Price/day:- <span class="text-success">Rs.{{ priceperday }}</span></th>
+                        <th>Email:- <span class="text-success">{{ email }}</span></th>
+                    </tr>
+                    <tr>
+                        <th colspan="2"><p class="text-justify">{{ des }}</p></th>
+                    </tr>
+                </table>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div id="roomphotos"></div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+</body>
+</html>

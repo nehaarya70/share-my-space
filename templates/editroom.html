@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Room</title>
+    <!-- Latest compiled and minified CSS -->
+    {% include 'headerfiles.html' %}
+     <script>
+        $(document).ready(function () {
+            $('#myform').validate();
+        });
+    </script>
+
+</head>
+<body>
+{% include 'userheader.html' %}
+<div class="container">
+    <div class="col-6 offset-3">
+        <h1 class="text-center">EDIT ROOM</h1>
+        <form action="/editroomaction" method="POST" enctype="multipart/form-data" id="myform">
+            {% csrf_token %}
+            <div class="form-group">
+{#                <label>Room-ID</label>#}
+                <input  class="form-control" readonly value="{{ roomid }}" type="hidden" name="roomid"><br>
+
+            </div>
+
+              <div class="form-group">
+                <label>Title</label>
+                <input  class="form-control"  value="{{ title}}" type="text" name="title" data-rule-required="true"
+                       data-msg-required="Please Enter Title"><br>
+
+            </div>
+            <div class="form-group">
+                <label>Cover photo</label><br>
+                <img src="{{ photo }}" height="100px" width="150px">
+                <input class="form-control" type="file"  name="photo">
+            </div>
+              <div class="form-group">
+                <label>Price/day</label>
+                <input  class="form-control"  value="{{ priceperday }}" type="text" name="priceperday" data-rule-required="true"
+                       data-msg-required="Please Enter Price/day"><br>
+
+            </div>
+
+            <div class="form-group">
+                <label>City</label>
+                <input  class="form-control"  value="{{ city}}" type="text" name="city" data-rule-required="true"
+                       data-msg-required="Please Enter City"><br>
+
+            </div>
+
+
+            <div class="form-group">
+                <label>Room Description</label>
+               <textarea style="height: 100px;" class="form-control" name="des" data-rule-required="true"
+                       data-msg-required="Please Enter Room Description">{{ des }}</textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+
+
+    </div>
+</div>
+
+</body>
+</html>
+
+</body>
+</html>

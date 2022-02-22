@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Sign Up</title>
+
+    {% include 'headerfiles.html' %}
+     <script>
+        $(document).ready(function () {
+            $('#myform').validate();
+        });
+    </script>
+</head>
+<body>
+{% include 'slider.html' %}
+<div class="container">
+    <div class="col-6 offset-3">
+        <h1 class="text-center headings mb-4">USER SIGN UP</h1>
+        <form action="/usersignupaction" method="POST" enctype="multipart/form-data" id="myform">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Enter Full Name</label>
+                <input class="form-control" type="text" name="fullname" data-rule-required="true"
+                       data-msg-required="Please Enter Full Name">
+            </div>
+
+            <div class="form-group">
+                <label>Enter Mobile No.</label>
+                <input class="form-control" type="number" name="mobile" data-rule-required="true"
+                       data-msg-required="Please Enter Mobile No." minlength="10" maxlength="10">
+            </div>
+
+            <div class="form-group">
+                <label>City</label>
+                <input class="form-control" type="text" name="city" data-rule-required="true"
+                       data-msg-required="Please Enter City">
+            </div>
+
+
+            <div class="form-group">
+                <label>Enter Address</label>
+                <textarea class="form-control" name="address" data-rule-required="true"
+                       data-msg-required="Please Enter Address"></textarea>
+            </div>
+
+
+            <div class="form-group">
+                <label>Add Photo</label>
+                <input class="form-control" type="file" name="photo" data-rule-required="true"
+                       data-msg-required="Please Provide Photo">
+            </div>
+
+
+             <div class="form-group">
+                <label>Enter Email</label>
+                <input class="form-control" type="email" name="email" data-rule-required="true"
+                       data-msg-required="Please Enter Email ID">
+            </div>
+
+             <div class="form-group">
+                <label>Select User Type</label>
+                <select class="form-control" name="usertype">
+                <option value="Buyer">Buyer</option>
+                <option value="Seller">Seller</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label>Enter Password</label>
+                <input class="form-control" type="password" name="password" data-rule-required="true"
+                       data-msg-required="Please Enter Password">
+            </div>
+
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input class="form-control" type="password" name="repassword" data-rule-required="true"
+                       data-msg-required="Please Confirm Password">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+       {% if msg != "" %}
+            <div class="alert alert-success">
+                    {{ msg }}
+            </div>
+        {% endif %}
+
+    </div>
+</div>
+{% include 'footer.html' %}
+
+</body>
+</html>

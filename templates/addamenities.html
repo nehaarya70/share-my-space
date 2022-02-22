@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Amenity</title>
+    <!-- Latest compiled and minified CSS -->
+    {% include 'headerfiles.html' %}
+     <script>
+        function addamenity() {
+            var formdata = new FormData();
+            formdata.append('name',document.getElementById('name').value);
+            formdata.append('icon',document.getElementById('icon').files[0]);
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var ar = JSON.parse(this.response);
+                    document.getElementById('msg').innerHTML = ar['msg'];
+                    document.getElementById('name').value = "";
+                    document.getElementById('icon').value = "";
+                }
+            };
+            xmlhttp.open("POST", "addamenityaction", true);
+            xmlhttp.send(formdata);
+        }
+
+        $(document).ready(function () {
+            $('#myform').validate();
+        });
+
+    </script>
+
+</head>
+<body>
+{% include 'adminheader.html' %}
+<div class="container">
+    <div class="col-6 offset-3">
+        <h1 class="text-center">ADD AMENITY</h1>
+        <form action="" method="POST" enctype="multipart/form-data" id="myform">
+            {% csrf_token %}
+
+          <div class="form-group">
+                <label>Enter Amenity Name</label>
+                <input  class="form-control"  type="text" name="name" id="name" data-rule-required="true"
+                       data-msg-required="Please Enter Amenity">
+
+            </div>
+
+            <div class="form-group">
+                <label>Select Icon</label><br>
+                <input class="form-control" type="file"  name="icon" id="icon" data-rule-required="true"
+                       data-msg-required="Please Provide photo">
+            </div>
+
+            <div class="form-group">
+                <button type="button" onclick="addamenity()" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+    <div id="msg" class="alert alert-success"></div>
+    </div>
+</div>
+
+
+</body>
+</html>
+
+</body>
+</html>

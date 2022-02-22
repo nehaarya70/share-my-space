@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="534856dc-d9fb-423b-92d3-2c0feebfc9bf" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>addcategoryaction</find>
+      <find>userloginaction</find>
+      <find>bootstrap</find>
+      <find>viewroomphoto</find>
+      <find>roomsearchaction</find>
+      <find>bookingaction</find>
+      <find>confirmbooking</find>
+      <find>sign</find>
+      <find>join</find>
+      <find>userhome</find>
+      <find>confir</find>
+    </findStrings>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1RXfl9s5a3PR2ZeY3tQPNeTbBPv" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="sharemyspace" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="sharemyspace" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\sharemyspace\static" />
+      <recent name="C:\sharemyspace\templates" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="sharemyspace" type="Python.DjangoServer" factoryName="Django server">
+      <module name="sharemyspace" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="sharemyspace.settings" />
+      </envs>
+      <option name="SDK_HOME" value="C:\testingpurspose\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="534856dc-d9fb-423b-92d3-2c0feebfc9bf" name="Default Changelist" comment="" />
+      <created>1549694748005</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1549694748005</updated>
+      <workItem from="1549694848235" duration="9433000" />
+      <workItem from="1549707187868" duration="1819000" />
+      <workItem from="1549728266422" duration="4514000" />
+      <workItem from="1549863585594" duration="2384000" />
+      <workItem from="1550055153025" duration="5106000" />
+      <workItem from="1550228098920" duration="4634000" />
+      <workItem from="1550295046169" duration="5851000" />
+      <workItem from="1550554542713" duration="10704000" />
+      <workItem from="1550591769162" duration="136000" />
+      <workItem from="1550661244259" duration="5888000" />
+      <workItem from="1550746393948" duration="5839000" />
+      <workItem from="1550844020851" duration="476000" />
+      <workItem from="1550844531509" duration="3089000" />
+      <workItem from="1550849059525" duration="41000" />
+      <workItem from="1550849244357" duration="72000" />
+      <workItem from="1550849345091" duration="119000" />
+      <workItem from="1550849487827" duration="1867000" />
+      <workItem from="1550900486818" duration="8877000" />
+      <workItem from="1551091880961" duration="5311000" />
+      <workItem from="1551434371631" duration="9111000" />
+      <workItem from="1551507805664" duration="9151000" />
+      <workItem from="1551869690322" duration="6942000" />
+      <workItem from="1551885560298" duration="4272000" />
+      <workItem from="1551956277641" duration="4972000" />
+      <workItem from="1551973209286" duration="5548000" />
+      <workItem from="1552042688949" duration="4670000" />
+      <workItem from="1552110178687" duration="9646000" />
+      <workItem from="1552123025419" duration="1515000" />
+      <workItem from="1552303572880" duration="1452000" />
+      <workItem from="1552306523086" duration="1650000" />
+      <workItem from="1552407192145" duration="4740000" />
+      <workItem from="1552557216174" duration="9473000" />
+      <workItem from="1552714364037" duration="4522000" />
+      <workItem from="1553252955339" duration="252000" />
+      <workItem from="1553440634952" duration="6240000" />
+      <workItem from="1554355030873" duration="13050000" />
+      <workItem from="1554373275289" duration="1189000" />
+      <workItem from="1554887795539" duration="133000" />
+      <workItem from="1556557955914" duration="3441000" />
+      <workItem from="1556601538674" duration="12505000" />
+      <workItem from="1556693931691" duration="7588000" />
+      <workItem from="1556709232249" duration="4078000" />
+      <workItem from="1561210066799" duration="92000" />
+      <workItem from="1561210562942" duration="597000" />
+      <workItem from="1568879458039" duration="42000" />
+      <workItem from="1569577223212" duration="660000" />
+      <workItem from="1569577914442" duration="1077000" />
+      <workItem from="1569728364401" duration="315000" />
+      <workItem from="1569728780840" duration="5937000" />
+      <workItem from="1569813707592" duration="3256000" />
+      <workItem from="1569818514596" duration="3790000" />
+      <workItem from="1570468255678" duration="2786000" />
+      <workItem from="1571815728139" duration="1768000" />
+      <workItem from="1572262960633" duration="926000" />
+      <workItem from="1572581360546" duration="559000" />
+      <workItem from="1572876959422" duration="3046000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

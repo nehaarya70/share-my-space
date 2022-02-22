@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Amenity</title>
+    <!-- Latest compiled and minified CSS -->
+    {% include 'headerfiles.html' %}
+     <script>
+        $(document).ready(function () {
+            $('#myform').validate();
+        });
+    </script>
+
+</head>
+<body>
+{% include 'adminheader.html' %}
+<div class="container">
+    <div class="col-6 offset-3">
+        <h1 class="text-center">EDIT AMENITY</h1>
+        <form action="/editamenityaction" method="POST" enctype="multipart/form-data" id="myform">
+            {% csrf_token %}
+
+             <div class="form-group">
+               {#  <label>ID</label>#}
+                <input  class="form-control" readonly value="{{ id }}"  name="id" type="hidden"><br>
+
+            </div>
+
+            <div class="form-group">
+                 <label>Title</label>
+                <input  class="form-control" readonly value="{{ name }}"  name="name"><br>
+
+            </div>
+
+
+            <div class="form-group">
+                <label>Icon</label><br>
+                <img src="{{ icon }}" height="100px" width="150px">
+                <input class="form-control" type="file"  name="icon">
+            </div>
+
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+
+
+    </div>
+</div>
+
+</body>
+</html>
+
+</body>
+</html>

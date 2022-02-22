@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    Homepage</title>
+    {% include 'headerfiles.html' %}
+
+</head>
+<body onload="search()">
+{% include 'userheader.html' %}
+<h3 class="text-center text-info" style="font-family: 'Copperplate Gothic Bold'">Explore your town {{ request.session.USEREMAIL }}</h3>
+<div class="container">
+{% for p in x %}
+    <a href="roomdetail?roomid={{ p.roomid }}">
+    <div class="row inner_roomdiv">
+        <div class="col-md-4">
+            <img src="{{ p.photo }}" style="width:100%; height:200px">
+        </div>
+        <div class="col-md-8">
+            <h3 class="text-capitalize text-center text-info">{{ p.title }}</h3>
+            <h6> Price/day:- <span class="text-success">{{ p.priceperday }}</span></h6>
+            <p class="text-justify">{{ p.des }}</p>
+        </div>
+    </div>
+    </a>
+{% endfor %}
+</div>
+</body>
+</html>

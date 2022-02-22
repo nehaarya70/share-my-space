@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Room Photos</title>
+     {% include 'headerfiles.html' %}
+</head>
+<body>
+{% include 'userheader.html' %}
+<div class="container">
+    <div class="col-md-12">
+        <h1 class="text-center">ROOM PHOTOS</h1>
+        <table class="table table-hover table-bordered">
+            <tr >
+                <th>ID</th>
+                <th>Title</th>
+                <th>Photo</th>
+                <th>DELETE</th>
+            </tr>
+        {% for p in x %}
+            <tr>
+                <td>{{ p.id }}</td>
+                <td>{{ p.title}}</td>
+
+
+
+                <td><img src="{{ p.photo }}" height="50px" width="50px" id="img1"></td>
+
+                <td><a href="/deleteroomphoto?photoid={{ p.id }}&roomid={{ p.roomid }}">Delete</a></td>
+
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+</div>
+
+
+
+
+</body>
+</html>

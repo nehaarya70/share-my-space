@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Category</title>
+    {% include 'headerfiles.html' %}
+</head>
+<body>
+{% include 'adminheader.html' %}
+<div class="container">
+    <div class="col-md-12">
+        <h1 class="text-center">VIEW CATEGORY</h1>
+        <table class="table table-hover table-bordered">
+            <tr >
+                <th>Email</th>
+                 <th>Description</th>
+                <th colspan="2">Delete/Edit</th>
+            </tr>
+        {% for p in x %}
+            <tr>
+                <td>{{ p.cat }}</td>
+            <td>{{ p.des }}</td>
+            <td><a href="/editcategory?cat={{ p.cat }}">Edit</a></td>
+            <td><a href="/deletecategory?cat={{ p.cat }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+</div>
+
+</body>
+</html>

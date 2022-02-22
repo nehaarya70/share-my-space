@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adminviewrooms</title>
+     {% include 'headerfiles.html' %}
+</head>
+<body>
+{% include 'adminheader.html' %}
+<div class="container">
+    <div class="col-md-12">
+        <h1 class="text-center">ROOMS</h1>
+        <table class="table table-hover table-bordered">
+            <tr >
+                <th>ID</th>
+                <th>Title</th>
+                 <th>Price/day</th>
+                <th>Description</th>
+                <th>Photo</th>
+                <th>Email</th>
+                <th>City</th>
+
+
+
+            </tr>
+        {% for p in x %}
+
+            <tr>
+
+                <td><a href="adminshowroomdeatil?roomid={{ p.roomid }}">{{ p.roomid }}</a></td>
+                <td><a href="adminshowroomdeatil?roomid={{ p.roomid }}">{{ p.title}}</a></td>
+                <td><a href="adminshowroomdeatil?roomid={{ p.roomid }}">{{ p.priceperday}}</a></td>
+                <td><a href="adminshowroomdeatil?roomid={{ p.roomid }}">{{ p.des}}</a></td>
+                <td><a href="adminshowroomdeatil?roomid={{ p.roomid }}"><img src="{{ p.photo }}" height="50px" width="70px"></a>a></td>
+                <td><a href="adminshowroomdeatil?roomid={{ p.roomid }}">{{ p.email}}</a></td>
+                <td><a href="adminshowroomdeatil?roomid={{ p.roomid }}">{{ p.city}}</a></td>
+
+            </tr>
+
+        {% endfor %}
+    </table>
+</div>
+</div>
+
+
+
+
+</body>
+</html>

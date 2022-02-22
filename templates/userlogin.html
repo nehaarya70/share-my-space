@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User login</title>
+    {% include 'headerfiles.html' %}
+      <script>
+        $(document).ready(function () {
+            $('#myform').validate();
+        });
+    </script>
+
+</head>
+<body>
+{% include 'slider.html' %}
+<div class="container">
+
+    <div class="col-6 offset-3">
+        <h1 class="text-center headings mb-4">USER LOGIN</h1>
+
+        <form id="myform" action="/userloginaction" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+{#                <span class="input-group-addon"><i class="fa fa-user"></i></span>#}
+{#                <label>Email</label>#}
+                <input type="email" data-rule-required="true" data-msg-required="Plase Enter Email ID" class="form-control" name="email"  placeholder="Email">
+            </div>
+
+            <div class="form-group">
+{#                <span class="input-group-addon"><i class="fa fa-lock"></i></span>#}
+{#                <label>Password</label>#}
+                <input type="password" data-rule-required="true"  data-msg-required="Please Enter Password" class="form-control" name="password" placeholder="Password">
+            </div>
+
+            <div class="form-group">
+                <button type="submit"  class="btn btn-info">Submit</button>
+            </div>
+            <div class="form-group">
+                Don't have an account? <a href="usersignup" style="color:blue">Sign up</a>
+            </div>
+
+        </form>
+
+        {% if msg != "" %}
+            <div class="alert alert-success">
+                    {{ msg }}
+            </div>
+        {% endif %}
+
+    </div>
+
+    </div>
+
+
+{% include 'footer.html' %}
+</body>
+</html>

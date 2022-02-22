@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Booking</title>
+    {% include 'headerfiles.html' %}
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+
+
+</head>
+<body>
+{% include 'userheader.html' %}
+<div class="container">
+    <div class="col-12">
+
+        <h1 class="fa fa-thumbs-up align-content-center" style="font-size:150px;color:green;display:block;text-align: center"> </h1>
+
+        <div class="row">
+            <div class="col-6 offset-4">
+                <h3 style="font-family: 'Bodoni MT Black';color:green" >Congratulation!! Your room has been booked.</h3>
+                <a href="/userhomepage" style="color: blue;">Continue to Home Page >></a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

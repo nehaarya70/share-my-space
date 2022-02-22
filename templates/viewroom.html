@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rooms</title>
+     {% include 'headerfiles.html' %}
+</head>
+<body>
+{% include 'userheader.html' %}
+<div class="container">
+    <div class="col-md-12">
+        <h1 class="text-center">ROOMS</h1>
+        <table class="table table-hover table-bordered">
+            <tr >
+                <th>Room-id</th>
+                <th>Title</th>
+                <th>Price/day</th>
+
+                <th>City</th>
+                <th>Description</th>
+                <th>Photo</th>
+
+
+
+                <th colspan="3">EDIT/DELETE/View Photos</th>
+            </tr>
+        {% for p in x %}
+            <tr>
+                <td>{{ p.roomid }}</td>
+                <td>{{ p.title}}</td>
+                <td>{{ p.priceperday }}</td>
+                <td>{{ p.city}}</td>
+                <td>{{ p.des}}</td>
+
+                <td><img src="{{ p.photo }}" height="50px" width="50px" id="img1"></td>
+                <td><a href="/editroom?roomid={{ p.roomid }}">Edit</a></td>
+                <td><a href="/deleteroom?roomid={{ p.roomid }}">Delete</a></td>
+                <td><a href="/viewroomphoto?roomid={{ p.roomid }}">View Photos</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+</div>
+
+
+
+
+</body>
+</html>

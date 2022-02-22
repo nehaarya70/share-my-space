@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My bookings</title>
+    {% include 'headerfiles.html' %}
+    <Script>
+        function showmybookings() {
+            var xml = new XMLHttpRequest();
+            xml.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var ar = JSON.parse(this.response);
+                    var s = "";
+                    {#s += "<div class='col-md-12'>";#}
+                    for (var i = 0; i < ar.length; i++) {
+                        s += "<div class='row'>";
+                        s += "<div class='col-md-6'>";
+                        s += "<h5><strong>Date - </strong>" + ar[i]['dob'] + "</h5>";
+                        s += "<h5><strong>Name - </strong>" + ar[i]['name'] + "</h5>";
+                        s += "</div>";
+
+                        s += "<div class='col-md-6'>";
+                        s += "<h5><strong>Total Cost - </strong>" + ar[i]['totalcost'] + "</h5>";
+                        s += "<h5><strong>No.of Person - </strong>" + ar[i]['noofperson'] + "</h5>";
+                        s += "</div>";
+                        s += "<div class='clearfix'></div>";
+                        s += "</div>";
+                        var ar1 = getbookingdetail(ar[i]['bookingid']);
+                        s += "<table class='table table-bordered'>";
+                        s += "<tr>";
+                        s += "<th>Room</th>";
+                        s += "<th>Photo</th>";
+                        s += "<th>Date</th>";
+                        s += "<th>Price</th>";
+                        s += "</tr>";
+                        var dt1 = "";
+                        for (var j = 0; j < ar1.length; j++) {
+                            dt1 += ar1[j]['date1'] + " , ";
+                        }
+                            s += "<tr>";
+                            s += "<td>" + ar1[0]['title'] + "</td>";
+                            s += "<td><img src='" + ar1[0]['photo'] + "' width=70 height=70></td>";
+                            s += "<td>" + dt1 + "</td>";
+                            s += "<td>" + ar1[0]['price'] + "</td>";
+                            s += "</tr>";
+
+                        s += "</table><hr>";
+                    }
+                    {#s += "</div>";#}
+                    document.getElementById('output').innerHTML = s;
+                }
+            };
+            xml.open('GET', 'showmybookings', true);
+            xml.send();
+        }
+
+        function getbookingdetail(bookingid) {
+            var k = "";
+            jQuery.ajax({
+                url: 'getbookingdetail?bookingid=' + bookingid,
+                type: 'get',
+                dataType: 'json',
+                async: false,
+                success: function (data) {
+                    k = data;
+                }
+            });
+            console.log(k);
+            return (k);
+        }
+    </Script>
+</head>
+<body onload="showmybookings()">
+{% include 'userheader.html' %}
+<h1 class="text-center text-info" style="font-family: 'Copperplate Gothic Bold'">MY BOOKINGS</h1>
+<div class="container">
+    <div class="col-md-12">
+        <div id="output"></div>
+    </div>
+    {% for p in x %}
+        <a href="roomdetail?roomid={{ p.roomid }}">
+            <div class="row inner_roomdiv">
+
+                <div class="col-md-6 offset-3">
+                    <h3 class="text-capitalize text-center text-info">{{ p.dob }}</h3>
+                    <h5> Booked For:- <span class="text-success">{{ p.name }}</span></h5>
+                    <h6> Total Cost:- <span class="text-success">{{ p.totalcost }}</span></h6>
+                    <h6> Total Person/s:- <span class="text-success">{{ p.noofperson }}</span></h6>
+                    <p class="text-justify">im here</p>
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+</div>
+</body>
+</html>

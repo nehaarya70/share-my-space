@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Admin</title>
+    {% include 'headerfiles.html' %}
+
+</head>
+<body>
+{% include 'adminheader.html' %}
+<div class="container">
+    <div class="col-md-12">
+        <h1 class="text-center">VIEW ADMIN</h1>
+        <table class="table table-hover table-bordered">
+            <tr >
+                <th>Email</th>
+                <th>Password</th>
+                <th>Admin Type</th>
+                <th colspan="2">Delete/Edit</th>
+            </tr>
+        {% for p in x %}
+            <tr>
+                <td>{{ p.Email }}</td>
+                <td>{{ p.Password }}</td>
+                <td>{{ p.AdminType }}</td>
+                <td><a href="/editadmin?email={{ p.Email }}">Edit</a></td>
+                <td><a href="/deleteadmin?email={{ p.Email }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seller information</title>
+    {% include 'headerfiles.html' %}
+</head>
+<body>
+{% include 'adminheader.html' %}
+<div class="container">
+    <div class="col-md-12">
+        <h1 class="text-center">PENDING SELLERS</h1>
+        <table class="table table-hover table-bordered">
+            <tr >
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile no.</th>
+                <th>Address</th>
+                <th>Photo</th>
+
+                <th colspan="2">Approve/Reject</th>
+            </tr>
+            {% for p in x %}
+            <tr>
+                <td>{{ p.fullname }}</td>
+                <td>{{ p.email }}</td>
+                <td>{{ p.mobileno }}</td>
+                <td>{{ p.address }}</td>
+
+                <td><img src="{{ p.photo }}" height="50px" width="50px"></td>
+                <td><a href="/approveseller?email={{ p.email }}">Approve</a></td>
+                <td><a href="/rejectseller?email={{ p.email }}">Reject</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+</div>
+
+</body>
+</html>

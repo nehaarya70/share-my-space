@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin login</title>
+    {% include 'headerfiles.html' %}
+    <script>
+        $(document).ready(function () {
+            $('#myform').validate();
+        });
+    </script>
+</head>
+<body>
+{% include 'slider.html' %}
+<div class="container">
+    <div class="col-6 offset-3">
+        <h1 class="text-center headings mb-4">ADMIN LOGIN</h1>
+
+
+        <form action="/adminloginaction" method="POST" id="myform">
+            {% csrf_token %}
+            <div class="form-group">
+{#                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>#}
+                <input type="email" class="form-control" name="email" placeholder="Email" data-rule-required="true"
+                       data-msg-required="Please Enter Email ID">
+            </div>
+            <div class="form-group">
+{#                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>#}
+                <input type="password" class="form-control" name="password" placeholder="Password"
+                       data-rule-required="true" data-msg-required="Please Enter Password">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-info">Submit</button>
+            </div>
+
+        </form>
+
+        {% if msg != "" %}
+            <div class="alert alert-success">
+                {{ msg }}
+            </div>
+        {% endif %}
+
+
+    </div>
+
+</div>
+{% include 'footer.html' %}
+</body>
+</html>

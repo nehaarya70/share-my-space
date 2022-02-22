@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rent room</title>
+    {% include 'headerfiles.html' %}
+     <script>
+        $(document).ready(function () {
+            $('#myform').validate();
+        });
+    </script>
+
+</head>
+<body>
+{% include 'userheader.html' %}
+<div class="container">
+    <div class="col-6 offset-3">
+        <h1 class="text-center">RENT A ROOM</h1>
+        <form action="/rentroomaction" method="POST" enctype="multipart/form-data" id="myform">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Enter Title</label>
+                <input class="form-control" type="text" name="title" data-rule-required="true"
+                       data-msg-required="Please Enter Title">
+            </div>
+
+            <div class="form-group">
+                <label>Enter Price/day</label>
+                <input class="form-control" type="text" name="priceperday" data-rule-required="true"
+                       data-msg-required="Please Enter Price/day">
+            </div>
+
+
+
+            <div class="form-group">
+                <label>Add Photo</label>
+                <input class="form-control" type="file" name="photo" data-rule-required="true"
+                       data-msg-required="Please Provide Photo">
+            </div>
+
+            <div class="form-group">
+                <label>Enter City</label>
+                <input class="form-control" type="text" name="city" data-rule-required="true"
+                       data-msg-required="Please Enter City">
+            </div>
+
+
+
+
+             <div class="form-group">
+                <label>Enter Room Description</label>
+                <textarea class="form-control" name="des" data-rule-required="true"
+                       data-msg-required="Please Enter Room Description"></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+        {% if msg != "" %}
+            <div class="alert alert-success">
+                    {{ msg }}
+            </div>
+        {% endif %}
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adminviewuser</title>
+     {% include 'headerfiles.html' %}
+</head>
+<body>
+{% include 'adminheader.html' %}
+<div class="container">
+    <div class="col-md-12">
+        <h1 class="text-center">BOOKEDROOM</h1>
+        <table class="table table-hover table-bordered">
+            <tr >
+
+
+                <th>Email</th>
+                <th>Name</th>
+                <th>Contact</th>
+
+
+
+            </tr>
+        {% for p in y %}
+
+            <tr>
+
+                <td>{{ p.email }}</td>
+                <td>{{ p.name}}</td>
+                <td>{{ p.mobileno}}</td>
+
+            </tr>
+
+        {% endfor %}
+    </table>
+</div>
+</div>
+
+
+
+
+</body>
+</html>

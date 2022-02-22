@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Category</title>
+    <!-- Latest compiled and minified CSS -->
+    {% include 'headerfiles.html' %}
+    <script>
+        $(document).ready(function () {
+            $('#myform').validate();
+        });
+    </script>
+
+</head>
+<body>
+{% include 'adminheader.html' %}
+<div class="container">
+    <div class="col-6 offset-3">
+        <h1 class="text-center">EDIT CATEGORY</h1>
+        <form action="/editcategoryaction" method="POST" id="myform" >
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Enter Category Name</label>
+                <input  class="form-control" readonly value="{{ cat }}" type="text" name="cat"><br>
+
+            </div>
+            <div class="form-group">
+                <label>Enter Category Description</label>
+               <textarea style="height: 100px;" class="form-control" name="des" data-rule-required="true"
+                       data-msg-required="Please Enter Category Description">{{ des }}</textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+
+
+    </div>
+</div>
+
+</body>
+</html>
+
+</body>
+</html>

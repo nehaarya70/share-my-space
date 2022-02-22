@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amenities</title>
+     {% include 'headerfiles.html' %}
+</head>
+<body>
+{% include 'adminheader.html' %}
+<div class="container">
+    <div class="col-md-12">
+        <h1 class="text-center">AMENITIES</h1>
+        <table class="table table-hover table-bordered">
+            <tr >
+                <th>ID</th>
+                <th>Name</th>
+                 <th>Icon</th>
+
+
+                <th colspan="2">EDIT/DELETE</th>
+            </tr>
+        {% for p in x %}
+            <tr>
+                <td>{{ p.id }}</td>
+                <td>{{ p.name}}</td>
+                <td><img src="{{ p.icon }}" height="50px" width="50px"></td>
+                <td><a href="/editamenity?id={{ p.id }}">Edit</a></td>
+                <td><a href="/deleteamenity?id={{ p.id }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+</div>
+
+
+
+
+</body>
+</html>

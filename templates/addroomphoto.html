@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Room photo</title>
+    <!-- Latest compiled and minified CSS -->
+    {% include 'headerfiles.html' %}
+     <script>
+        function addphotoaction() {
+            {#alert();#}
+            var formdata = new FormData();
+            formdata.append('roomid',document.getElementById('roomid').value);
+            formdata.append('title',document.getElementById('title').value);
+            formdata.append('photo',document.getElementById('photo').files[0]);
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var ar = JSON.parse(this.response);
+                    document.getElementById('msg').innerHTML = ar['msg'];
+                    document.getElementById('title').value = "";
+                    document.getElementById('photo').value = "";
+                }
+            };
+            xmlhttp.open("POST", "addroomphotoaction", true);
+            xmlhttp.send(formdata);
+        }
+
+        $(document).ready(function () {
+            $('#myform').validate();
+        });
+
+    </script>
+
+</head>
+<body>
+{% include 'userheader.html' %}
+<div class="container">
+    <div class="col-6 offset-3">
+        <h1 class="text-center">ADD ROOM PHOTO</h1>
+        <form action="" method="POST" enctype="multipart/form-data" id="myform">
+            {% csrf_token %}
+             <div class="form-group">
+                <label>Select Room</label>
+                <select class="form-control" name="roomid" id="roomid">
+                    {% for p in x %}
+                <option value="{{ p.roomid }}">{{ p.title}}</option>
+                     {% endfor %}
+                </select>
+            </div>
+          <div class="form-group">
+                <label>Title</label>
+                <input  class="form-control"  type="text" name="title" id="title" data-rule-required="true"
+                       data-msg-required="Please Enter Title">
+
+            </div>
+
+            <div class="form-group">
+                <label>photo</label><br>
+                <input class="form-control" type="file"  name="photo" id="photo" data-rule-required="true"
+                       data-msg-required="Please Provide photo">
+            </div>
+
+            <div class="form-group">
+                <button type="button" onclick="addphotoaction()" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+    <div id="msg" class="alert alert-success"></div>
+    </div>
+</div>
+
+
+</body>
+</html>
+
+</body>
+</html>

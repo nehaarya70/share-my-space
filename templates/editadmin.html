@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Admin</title>
+    <!-- Latest compiled and minified CSS -->
+   {% include 'headerfiles.html' %}
+
+
+</head>
+<body>
+{% include 'adminheader.html' %}
+<div class="container">
+    <div class="col-6 offset-3">
+        <h1 class="text-center">EDIT ADMIN</h1>
+        <form action="/editadminaction" method="POST"  >
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Enter Email</label>
+                <input  class="form-control" readonly value="{{ email }}" type="email" name="email"><br>
+
+            </div>
+
+            <div class="form-group">
+                <label>Select Admin Type</label>
+                <select class="form-control" name="admintype">
+                 {% if admintype == 'superadmin' %}
+                        <option value="superadmin" selected>Super Admin</option>
+                        {% else %}
+                        <option value="superadmin">Super Admin</option>
+                    {% endif %}
+
+                {% if admintype == 'subadmin' %}
+                        <option value="subadmin" selected>Sub Admin</option>
+                        {% else %}
+                        <option value="subadmin">Sub Admin</option>
+                    {% endif %}
+
+
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+
+
+    </div>
+</div>
+
+</body>
+</html>
+
+</body>
+</html>
